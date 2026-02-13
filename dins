@@ -18,7 +18,6 @@ def search(current_path='.'):
 		if os.path.isfile(fullpath):
 			if i == s:
 				print("file is - ",current_path)
-				os.chdir("./lock")
 				return True
 		elif os.path.isdir(fullpath):
 			if search(fullpath):
