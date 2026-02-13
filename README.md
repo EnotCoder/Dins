@@ -1,11 +1,7 @@
 # Dins
 
 <h1 align="center">DOWNLOAD</h1>
-<h3 align="center">{                                </h3>
 <h3 align="center">		cd folder with dins</h3>
 <h3 align="center">		sudo cp dins /usr/local/bin/</h3>
-<h3 align="center">}                                </h3>
 <h1 align="center">DELETE</h1>
-<h3 align="center">{                                </h3>
-<h3 align="center">		sudo rm /usr/local/bin/dins </h3>
-<h3 align="center">}                                </h3>
+<h3 align="center">		sudo rm /usr/local/bin/dins</h3>
