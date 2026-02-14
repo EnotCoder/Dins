@@ -2,11 +2,34 @@
 import os
 import sys
 
-if len(sys.argv) > 2:
-	print("no argv!")
-	sys.exit(1)
+s:str = 0
+r:str = ""
+version = 1.0
 
-s:str = sys.argv[1]
+if len(sys.argv) > 3:
+	print("manu argv")
+	sys.exit(1)
+elif len(sys.argv) < 2:
+	print(version)
+	sys.exit()
+
+if len(sys.argv) == 2:
+	s = sys.argv[1]
+elif len(sys.argv) == 3:
+	r = sys.argv[2]
+
+def printFileHAVE(current_path:str):
+	p:str = "|" + "file is - " + current_path + "/" + s + "|"
+	print("-" * len(p))
+	print(p)
+	print("-" * len(p))
+	print(" |=" + " " * (len(p)-6) + "=| ")
+
+
+def printFileNOT():
+	print("file not found!")
+	print(":(")
+
 
 def search(current_path='.'):
 	f = os.listdir(current_path)
@@ -17,7 +40,10 @@ def search(current_path='.'):
 
 		if os.path.isfile(fullpath):
 			if i == s:
-				print("file is - ",current_path)
+				if r:
+					os.system(r + " " + s)
+				else:
+					printFileHAVE(current_path)
 				return True
 		elif os.path.isdir(fullpath):
 			if search(fullpath):
@@ -27,4 +53,4 @@ def search(current_path='.'):
 
 if __name__ == "__main__":
 	if not search():
-		print("file not found!")
+		printFileNOT()
